@@ -1,5 +1,10 @@
 {
   "dependencies": {
     "@arbetsmiljo/diarium": "^0.0.21"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   }
 }

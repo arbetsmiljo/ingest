@@ -21,3 +21,7 @@ runs:
     - run: pnpm install
       shell: bash
       working-directory: ${{ github.action_path }}
+
+    - run: pnpm run diarium ingest -f ${{ github.workspace }}/db.sqlite -m 300 2025-02-01
+      shell: bash
+      working-directory: ${{ github.action_path }}
