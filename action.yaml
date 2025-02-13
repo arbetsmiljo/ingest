@@ -22,6 +22,11 @@ runs:
       shell: bash
       working-directory: ${{ github.action_path }}
 
-    - run: pnpm diarium ingest -f ${{ github.workspace }}/db.sqlite -m 300 2025-02-01
+    - run: pnpm diarium ingest -f ${{ github.workspace }}/db.sqlite -m 256 ${{ inputs.year }}
       shell: bash
       working-directory: ${{ github.action_path }}
+
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ inputs.github_token }}
